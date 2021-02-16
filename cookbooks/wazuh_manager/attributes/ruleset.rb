@@ -3,7 +3,7 @@
 # Author:: Wazuh <info@wazuh.com
 
 # Ruleset settings (Manager)
-default['ossec']['conf']['ruleset'] = {
+1['ossec']['conf']['ruleset'] = {
     'decoder_dir' => [
         'ruleset/decoders', 
         'etc/decoders'
