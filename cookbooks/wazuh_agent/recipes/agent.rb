@@ -16,6 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 include_recipe 'wazuh_agent::repository'
 
 case node['platform']
@@ -99,6 +100,7 @@ execute 'wazuh agent auth' do
   timeout 30
   ignore_failure node['ossec']['ignore_failure']
   only_if { agent_auth['register'] == 'yes' && agent_auth['host'] && !File.size?("#{dir}/etc/client.keys") }
+  sensitive true
 end
 
 include_recipe 'wazuh_agent::common'
